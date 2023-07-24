@@ -1,4 +1,4 @@
-package base;
+package org.rami.petis.base;
 
 import javax.persistence.*;
 import java.io.Serializable;
