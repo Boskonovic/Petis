@@ -29,10 +29,18 @@ public class Review {
     @Enumerated(EnumType.STRING)
     private ReviewGrade reviewGrade;
     @ManyToOne
-    @JoinColumn(name = "response_id",nullable = false)
+    @JoinColumn(
+            name = "response_id",
+            referencedColumnName = "response_id",
+            nullable = false
+    )
     private Response response;
     @ManyToOne
-    @JoinColumn(name = "response_id",nullable = false)
+    @JoinColumn(
+            name = "request_id",
+            referencedColumnName = "request_id",
+            nullable = false
+    )
     private Request request;
 
     public Review() {

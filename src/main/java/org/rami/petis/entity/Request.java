@@ -41,7 +41,11 @@ public class Request {
     @Size(max = 500)
     private String details;
     @ManyToOne
-    @JoinColumn(name = "user_id",nullable = false)
+    @JoinColumn(
+            name = "user_id",
+            referencedColumnName = "user_id",
+            nullable = false
+    )
     private User user;
     @OneToMany(mappedBy = "request")
     private Set<Pet> pets = new HashSet<>();
