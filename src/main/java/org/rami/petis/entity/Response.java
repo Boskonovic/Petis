@@ -28,11 +28,19 @@ public class Response {
     private ResponseStatus responseStatus;
     @Size(max = 500)
     private String details;
-    @OneToMany
-    @JoinColumn(name = "user_id", nullable = false)
+    @ManyToOne
+    @JoinColumn(
+            name = "user_id",
+            referencedColumnName = "user_id",
+            nullable = false
+    )
     private User user;
-    @OneToMany
-    @JoinColumn(name = "request_id", nullable = false)
+    @ManyToOne
+    @JoinColumn(
+            name = "request_id",
+            referencedColumnName = "request_id",
+            nullable = false
+    )
     private Request request;
 
     public Response() {
